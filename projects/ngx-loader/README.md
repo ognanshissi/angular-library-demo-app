@@ -39,3 +39,27 @@ export class AppModule {}
   <ngx-loader></ngx-loader>
   <router-outlet></router-outlet>
 ```
+
+- Handle the loader state inside `app.component.ts`
+
+```typescript
+import {NgxLoaderService} from '@ognanshissi/ngx-loader'
+
+@Component({
+  //...
+})
+export class AppComponent implement OnInit {
+
+  constructor (
+    private ngxLoaderService: NgxLoaderService
+  ){}
+
+  ngOnInit(){
+    // How you can trigger loader
+    this.ngxLoaderService.setLoader(true);
+    setTimeOut(() => {
+      this.ngxLoaderService.setLoader(false);
+    }, 5000)
+  }
+}
+```
