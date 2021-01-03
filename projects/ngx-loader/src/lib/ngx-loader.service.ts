@@ -11,7 +11,7 @@ export class NgxLoaderService {
 
   constructor() { }
 
-  setLoader(value: boolean): void {
+  public setLoader(value: boolean): void {
     this.loader.next(value);
   }
 }

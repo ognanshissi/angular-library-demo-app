@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-ngx-loader": "ng build ngx-loader",
+    "build-ngx-loader": "ng build ngx-loader --prod",
     "build-ngx-loader:watch": "ng build ngx-loader --watch"
   },
   "private": true,

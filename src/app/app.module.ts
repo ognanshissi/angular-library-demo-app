@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgxLoaderModule} from 'ngx-loader'
+import {NgxLoaderModule, NgxLoaderTypeEnum} from 'ngx-loader'
 
 @NgModule({
   declarations: [
@@ -12,7 +12,9 @@ import {NgxLoaderModule} from 'ngx-loader'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxLoaderModule
+    NgxLoaderModule.forRoot({
+      type: NgxLoaderTypeEnum.GRID
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

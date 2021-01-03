@@ -1,6 +1,6 @@
 import { NgxLoaderService } from './ngx-loader.service';
-import { NgxLoaderType, NgxLoaderTypeEnum } from './ngx-loader.config';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgxLoaderType, NgxLoaderTypeEnum, NgxLoaderConfig } from './ngx-loader.config';
+import { Component, Inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Component({
@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 })
 export class NgxLoaderComponent implements OnInit {
 
-  @Input() type: NgxLoaderType = NgxLoaderTypeEnum.OVAL; // default
+  type: NgxLoaderType = NgxLoaderTypeEnum.OVAL; // default
   @Input() size: number = 12;
 
   ngxLoaderTypeEnum = NgxLoaderTypeEnum;
@@ -18,8 +18,11 @@ export class NgxLoaderComponent implements OnInit {
   isLoading$: Observable<boolean> = of(false);
 
   constructor(
-    private ngxLoaderService: NgxLoaderService
-  ) { }
+    private ngxLoaderService: NgxLoaderService,
+    private readonly loaderConfig: NgxLoaderConfig
+  ) {
+    this.type = this.loaderConfig.type;
+  }
 
   ngOnInit(): void {
     console.log(this.type);

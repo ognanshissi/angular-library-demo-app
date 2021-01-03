@@ -1,6 +1,10 @@
 {
   "name": "@ognanshissi/ngx-loader",
-  "version": "0.0.1",
+  "author": {
+    "name": "Ambroise BAZIE",
+    "email": "bazieambroise@gmail.com"
+  },
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": ">=6.0.5",
     "@angular/core": ">=6.0.5"

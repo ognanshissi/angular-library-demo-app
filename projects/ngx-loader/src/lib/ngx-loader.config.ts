@@ -1,3 +1,10 @@
+import { InjectionToken } from "@angular/core";
+
+export class NgxLoaderConfig {
+  type: NgxLoaderType = NgxLoaderTypeEnum.AUDIO;
+}
+
+
 export type NgxLoaderType = 'audio' |
 'ball-triangle' |
 'bars' |
